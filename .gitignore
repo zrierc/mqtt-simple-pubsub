@@ -1,0 +1,13 @@
+node_modules
+dist
+
+# env and local files
+.env
+.env*
+.env*.local
+*.local
+!.env.example
+
+# misc
+*.zip
+.DS_Store
