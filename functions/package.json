@@ -1,0 +1,18 @@
+{
+  "name": "mqtt-simple-publisher",
+  "description": "Lambda function publisher MQTT",
+  "version": "1.0.0",
+  "scripts": {
+    "typecheck": "tsc -noEmit"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.119",
+    "@types/node": "^20.4.2",
+    "@types/uuid": "^9.0.2",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "mqtt": "^4.3.7",
+    "uuid": "^9.0.0"
+  }
+}
