@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
 import mqtt from 'precompiled-mqtt';
+import './Messages.css';
 
 interface IMessages {
   id: string;
