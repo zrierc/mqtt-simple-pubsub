@@ -7,8 +7,7 @@ interface IMessages {
   id: string;
   time: number;
   data: {
-    temperature: number;
-    humidity: number;
+    message: string;
   };
 }
 
@@ -35,6 +34,7 @@ function Messages() {
     client.on('connect', () => {
       console.log('connected');
       client.subscribe(topicToSubscribe);
+      console.log('topic subscribed:', import.meta.env.VITE_MQ_TOPIC);
     });
 
     client.on('message', (_topic, message) => {
@@ -81,11 +81,10 @@ function Messages() {
     <Table striped borderless hover responsive variant="dark">
       <thead>
         <tr>
-          <th>Sensor ID</th>
+          <th>ID</th>
           <th>Date</th>
           <th>Time</th>
-          <th>Temperature (°C)</th>
-          <th>Humidity (%)</th>
+          <th>Message</th>
         </tr>
       </thead>
       <tbody>
@@ -94,8 +93,7 @@ function Messages() {
             <td>{d.id}</td>
             <td>{currentDate(d.time)}</td>
             <td>{currentDate(d.time, true)}</td>
-            <td>{d.data.temperature}</td>
-            <td>{d.data.humidity}</td>
+            <td>{d.data.message}</td>
           </tr>
         ))}
       </tbody>
