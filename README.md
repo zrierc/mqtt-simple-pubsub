@@ -197,13 +197,12 @@ Some of the services from AWS that are used in this mini workshop are as follows
 
    ```json
    {
-     "temperature": 25,
-     "humidity": 45
+     "message": "hello from lambda!"
    }
    ```
 
    > **Note** </br>
-   > Feel free to change the values.
+   > Feel free to change the `message` value.
 
 ## Setup Web-App
 
