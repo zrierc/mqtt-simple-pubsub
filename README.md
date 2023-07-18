@@ -44,9 +44,9 @@ mqtt-simple-pubsub/
 
 Before starting this mini workshop, the following runtime/tools must be met and configured properly.
 
-- Active AWS Account.
-- NodeJS `v16` or latest.
-- AWS CLI version 2.
+- Active [AWS Account](https://aws.amazon.com/).
+- [NodeJS](https://nodejs.org/en) `v16` or latest.
+- [AWS CLI version 2](https://aws.amazon.com/cli/).
 - (optional) OS based on Linux.
   > **Note** </br>
   > Build script for package lambda function code and it's dependecies require Linux/Unix shell to operate. If you are using an OS other than Linux and/or your device doesn't support Linux shell commands you can customize [this build script](/functions/build.sh) to make sure it runs properly.
@@ -63,6 +63,9 @@ Some of the services from AWS that are used in this mini workshop are as follows
 ---
 
 ## Setup Infrastructure
+
+> **Note** </br>
+> If the settings/configurations are not specified in this guide, you can leave them as default or you can specify the values with your own.
 
 1. Select AWS region.
 
@@ -119,6 +122,9 @@ Some of the services from AWS that are used in this mini workshop are as follows
    - Storage type: `gp3` (Recommended)
 
 ## Setup Lambda Publisher
+
+> **Note** </br>
+> If the settings/configurations are not specified in this guide, you can leave them as default or you can specify the values with your own.
 
 1. Select the same AWS region as the [infrastructure](#setup-infrastructure) that has been deployed.
 2. Create Lambda function with the following configurations:
@@ -187,7 +193,7 @@ Some of the services from AWS that are used in this mini workshop are as follows
        --zip-file fileb://function.zip
      ```
 
-5. Test function with the following event:
+5. Test invoke function with the following event:
 
    ```json
    {
@@ -200,3 +206,6 @@ Some of the services from AWS that are used in this mini workshop are as follows
    > Feel free to change the values.
 
 ## Setup Web-App
+
+> **Note** </br>
+> If the settings/configurations are not specified in this guide, you can leave them as default or you can specify the values with your own.
