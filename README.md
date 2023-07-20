@@ -10,6 +10,7 @@
   - [Lambda Publisher](#setup-lambda-publisher)
   - [Web-App](#setup-web-app)
 - [Testing](#🧪-testing)
+- [Clean Up Resources](#clean-up-resources)
 
 ---
 
@@ -422,3 +423,51 @@ You probably use the **wrong endpoint and authentication** in `.env` file. Pleas
 
    > **Note** </br>
    > Since the data are not stored in persistent storage, if you refresh your web browsers the data will lost. However, you can still receive data again by invoking Lambda as in step 1.
+
+---
+
+## Clean Up Resources
+
+To minimize the cost, make sure you **delete resources used in this workshop when you are finished**. Follow the sequence according to the steps to delete the AWS resources:
+
+1. Delete Amazon MQ broker.
+
+   > Click [here](https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/amazon-mq-deleting-broker.html) to read more how to delete Amazon MQ broker.
+
+2. Delete/terminate EC2 instance.
+
+   > Click [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html#terminating-instances-console) to read more how to terminate EC2 instance.
+
+3. Delete NAT Gateway.
+
+   Step to delete NAT Gateway via [AWS Web Console](https://console.aws.amazon.com/):
+
+   - Access the [Amazon VPC console](https://console.aws.amazon.com/vpc/home?#).
+   - In the nativation pane, choose **NAT Gateways**.
+   - Select the option button for the NAT Gateway, and then choose **Actions, Delete NAT gateway**.
+   - When prompted, enter **delete** and then choose **delete**.
+
+   > **Note** </br>
+   > The NAT gateway entry might remain visible in the Amazon VPC console for an hour after removal.
+
+   To delete a NAT gateway with the AWS Command Line Interface (AWS CLI), see [delete-nat-gateway](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/delete-nat-gateway.html).
+
+   > **Warning** </br>
+   > After deleting NAT Gateways, if you no longer need the Elastic IP address that was associated with a public NAT gateway, **release the Elastic IP address**. [Learn more](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#release-eip).
+
+4. Delete VPC.
+
+   > Click [here](https://docs.aws.amazon.com/vpc/latest/userguide/delete-vpc.html) to read more how to delete VPC.
+
+   > **Note** </br>
+   > If you delete a VPC using the Amazon VPC console, VPC components (e.g. Subnets, Security Groups, Route Tables, Internet Gateways, etc) are also deleted.
+
+5. (optional) Delete credentials that stored in AWS SSM parameter store or AWS Secret Manager.
+
+   > If you storing your credentials (username & password) Amazon MQ that stored in AWS SSM parameter store or AWS Secret Manager you can delete it by folllowing these step:
+   >
+   > - [Deleting AWS SSM parameter store](https://docs.aws.amazon.com/systems-manager/latest/userguide/deleting-parameters.html).
+   > - [Deleting Secret Manager secret](https://docs.aws.amazon.com/secretsmanager/latest/userguide/manage_delete-secret.html).
+
+6. (optional) Delete credentials that associated to AWS CLI.
+   > Although it costs no money, for security reasons, you can delete credentials used in the AWS CLI if you don't use them anymore.
