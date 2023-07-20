@@ -218,6 +218,7 @@ Check this common issues:
   <summary>❌ Failed running build command</summary>
 
 - Make sure npm or yarn already installed on your machine.
+- Make sure zip and unzip already installed on your machine. Click [here](https://www.tecmint.com/install-zip-and-unzip-in-linux/) to read guide how to install zip and unzip in Linux machine.
 - Make sure your machine support Linux/Unix commands to run build script. For Windows user, you can try to install [WSL 2](https://learn.microsoft.com/en-us/windows/wsl/install) to run Linux on your Windows machine OR you can create custom build script using powershell/cmd. Don't forget to change `build` script command inside `package.json`.
 </details>
 
