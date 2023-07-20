@@ -161,6 +161,12 @@ Some of the services from AWS that are used in this mini workshop are as follows
 
 4. Build and publish code
 
+   - Clone [this repository](https://github.com/zrierc/mqtt-simple-pubsub)
+
+     ```bash
+     git clone https://github.com/zrierc/mqtt-simple-pubsub.git && cd mqtt-simple-pubsub/
+     ```
+
    - Navigate to [`functions/`](/functions/)
 
      ```bash
@@ -170,25 +176,25 @@ Some of the services from AWS that are used in this mini workshop are as follows
    - Install required dependencies
 
      ```bash
-     yarn install
+     npm i
      ```
 
      or
 
      ```bash
-     npm install
+     yarn
      ```
 
    - Build your lambda function code and dependencies to zip
 
      ```bash
-     yarn run build
+     npm run build
      ```
 
      or
 
      ```bash
-     npm run build
+     yarn build
      ```
 
    - Publish your zip package to lambda using AWS CLI:
@@ -273,6 +279,8 @@ You can check AWS CloudWatch Logs for the results. Click [here](https://docs.aws
 4. Clone [this repository](https://github.com/zrierc/mqtt-simple-pubsub) and navigate to [`web/`](/web/)
 
    ```bash
+   git clone https://github.com/zrierc/mqtt-simple-pubsub.git && cd mqtt-simple-pubsub/
+
    cd web/
    ```
 
