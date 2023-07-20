@@ -269,7 +269,7 @@ You can check AWS CloudWatch Logs for the results. Click [here](https://docs.aws
    - [NodeJS](https://nodejs.org/en)
    - [NPM](https://www.npmjs.com/) or [Yarn](https://classic.yarnpkg.com/lang/en/)
 
-4. Clone this repository and navigate to [`web/`](/web/)
+4. Clone [this repository](https://github.com/zrierc/mqtt-simple-pubsub) and navigate to [`web/`](/web/)
 
    ```bash
    cd web/
@@ -278,13 +278,13 @@ You can check AWS CloudWatch Logs for the results. Click [here](https://docs.aws
 5. Install required dependencies
 
    ```bash
-   npm install
+   npm i
    ```
 
    or
 
    ```bash
-   yarn install
+   yarn
    ```
 
 6. Setup enviroment variables
@@ -314,7 +314,7 @@ You can check AWS CloudWatch Logs for the results. Click [here](https://docs.aws
    or
 
    ```bash
-   yarn run build
+   yarn build
    ```
 
 8. Start web-app
