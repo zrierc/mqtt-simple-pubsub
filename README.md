@@ -352,6 +352,10 @@ Check this common issues:
 <details>
   <summary>⚠ Can't access web-app</summary>
 
+- Expose app publicly by adding argument `--host 0.0.0.0`. For example:
+  ```bash
+  yarn run preview --host 0.0.0.0 --port 3000
+  ```
 - Make sure your web-app running properly and can publicly accessible or if you use Nginx as reverse proxy make sure you configure Nginx properly.
 - Check the security group that attached to EC2 Instance. Make sure the port that used to run the web-app is added to the inbound rules security group.
 
