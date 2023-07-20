@@ -9,7 +9,7 @@
   - [Infrastructure](#setup-infrastructure)
   - [Lambda Publisher](#setup-lambda-publisher)
   - [Web-App](#setup-web-app)
-- [🧪 Testing](#how-it-works)
+- [Testing](#🧪-testing)
 
 ---
 
