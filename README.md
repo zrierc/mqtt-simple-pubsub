@@ -9,7 +9,7 @@
   - [Infrastructure](#setup-infrastructure)
   - [Lambda Publisher](#setup-lambda-publisher)
   - [Web-App](#setup-web-app)
-- [How it Works](#how-it-works)
+- [🧪 Testing](#how-it-works)
 
 ---
 
@@ -78,7 +78,8 @@ Some of the services from AWS that are used in this mini workshop are as follows
    - Has two or more subnets.
    - Has internet gateway attached/route to public subnets.
    - (optional) At least one NAT Gateways route to private subnets.
-     > **💡 TIP** </br>
+     > **💡 TIP**
+     >
      > Use it when the resource(s) needed internet connection. Note that there is a charge for each NAT gateway.
    - DNS hostnames and DNS resolution must be enabled.
 
@@ -371,14 +372,40 @@ You probably use the **wrong endpoint and authentication** in `.env` file. Pleas
 
 ---
 
-## How it Works
+## 🧪 Testing
 
-1. Lambda is invoked with following event:
+1. Invoke Lambda function with following event:
+
+   > **Note** </br>
+   > Feel free to change the `message` value.
+
    ```json
    {
      "message": "hello from lambda!"
    }
    ```
-2. Lambda function publish `message` to topic called `broadcast` on Amazon MQ using `mqtt` protocol.
-3. Each data/messages stored in Amazon MQ.
-4. Web-app subcribe to topic called `broadcast` on Amazon MQ using web socket (`wss`) protocol and display it in tabular form.
+
+   <details>
+    <summary>🎬 Behind the Scene</summary>
+
+   - Lambda will receive the event that you sent, get `message` value and proccess it.
+
+   - After the event being proccessed, **Lambda will publish** it to topic called `broadcast` on Amazon MQ using `mqtt` protocol.
+
+   - Each payload stored in Amazon MQ.
+
+   </datails>
+
+2. Open the web-app that you've already deployed in web browsers and you will see message that you sent in Lambda.
+
+   > **💡 TIP**
+   >
+   > If data are not shown, invoke Lambda again by repeating step 1.
+
+   <details>
+   <summary>🎬 Behind the Scene</summary>
+
+   **Web-app subcribe topic** called `broadcast` on Amazon MQ using web socket (`wss`) protocol and display it in tabular form.
+
+   > **Note** </br>
+   > Since the data are not stored in persistent storage, if you refresh your web browsers the data will lost. However, you can still receive data again by invoking Lambda as in step 1.
