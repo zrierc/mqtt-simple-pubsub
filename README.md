@@ -10,6 +10,9 @@
   - [Lambda Publisher](#setup-lambda-publisher)
   - [Web-App](#setup-web-app)
 - [Testing](#🧪-testing)
+- [Improving Your Web-App](#improving-your-web-app)
+  - [Improve Security & Best Practices](#improve-security)
+  - [Add High-Availability](#add-high-availability)
 - [Clean Up Resources](#clean-up-resources)
 
 ---
@@ -423,6 +426,41 @@ You probably use the **wrong endpoint and authentication** in `.env` file. Pleas
 
    > **Note** </br>
    > Since the data are not stored in persistent storage, if you refresh your web browsers the data will lost. However, you can still receive data again by invoking Lambda as in step 1.
+
+---
+
+## Improving Your Web-App
+
+> **❗❗ First Thing First**
+>
+> To follow this section you MUST complete [Setup Environment](#setup-environment) section and mare sure everything runs well.
+
+Welcome to the improvement section of this mini workshop! Here you will learn how to improve and optimize your web-app for production such as implement security best practices and add high availability to your web-app.
+
+### Improve Security
+
+#### Infrastructure
+
+1. Implement custom security group to control traffic at instance level.
+
+   Restrict inbound rule by **adding only the necessary ports and traffic to the rule**. For example, if your web-app not using port 3000 anymore you can remove it from security group. Learn more about security group [here](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-security-groups.html).
+
+2. Implement custom network ACLs to control traffic at the subnet level.
+
+   You can create custom network ACLs for each subnet types. For example, create custom network ACLs for public subnet(s) and private subnet(s). Learn more about network ACLs [here](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html).
+
+   > **Note** </br>
+   > Please remember that network ACLs are stateless, which means that any changes applied to an inbound rule will not be applied to the outbound rule (and vice versa). Also, when you create custom network ACLs by default it will deny all traffic both inbound and outbound traffic.
+   >
+   > There's an associated outbound rule that allows responses to incoming traffic, you can do this by adding [ephemeral ports](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html#nacl-ephemeral-ports) to outbound rule. **Only add the required port and traffic to the rule**.
+
+#### Lambda function
+
+#### Web-App
+
+#### References
+
+### Add High-Availability
 
 ---
 
