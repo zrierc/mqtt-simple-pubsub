@@ -457,7 +457,7 @@ Welcome to the improvement section of this mini workshop! Here you will learn ho
    >
    > There's an associated outbound rule that allows responses to incoming traffic, you can do this by adding [ephemeral ports](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html#nacl-ephemeral-ports) to outbound rule. **Only add the required port and traffic to the rule**.
 
-3. Don't make Amazon MQ publicly accessible and put them in private subnet.
+3. Don't make Amazon MQ publicly accessible and put them in private subnet. This ensures that only you (and authorized users) can access it.
 
 #### Lambda function
 
