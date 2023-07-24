@@ -11,8 +11,7 @@
   - [Web-App](#setup-web-app)
 - [Testing](#🧪-testing)
 - [Improving Your Web-App](#improving-your-web-app)
-  - [Improve Security & Best Practices](#improve-security)
-  - [Add High-Availability](#add-high-availability)
+  - [Implement Security & Best Practices](#implement-security--best-practices)
 - [Clean Up Resources](#clean-up-resources)
 
 ---
@@ -440,7 +439,7 @@ You probably use the **wrong endpoint and authentication** in `.env` file. Pleas
 
 Welcome to the improvement section of this mini workshop! Here you will learn how to improve and optimize your web-app for production such as implement security best practices and add high availability to your web-app.
 
-### Improve Security
+### Implement Security & Best Practices
 
 #### Infrastructure
 
@@ -494,8 +493,6 @@ Welcome to the improvement section of this mini workshop! Here you will learn ho
    You can put EC2 instance in private subnet. Use an [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html) in front of it so that users can access the web-app without having to dirrectly access the EC2 instance.
 
    You can also use HTTPS to your Application Load Balancer (ALB). [Learn more](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html).
-
-### Add High-Availability
 
 ---
 
