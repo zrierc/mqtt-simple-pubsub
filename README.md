@@ -274,6 +274,9 @@ You can check AWS CloudWatch Logs for the results. Click [here](https://docs.aws
 
 2. Connect to EC2 instance that already created
 
+   > **Note** </br>
+   > EC2 gives you several ways to connect to it. [Learn more](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstances.html).
+
 3. Install required packages:
 
    - [Git](https://git-scm.com/)
