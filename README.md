@@ -479,11 +479,17 @@ Welcome to the improvement section of this mini workshop! Here you will learn ho
 
    > Click [here](https://pm2.keymetrics.io/docs/tutorials/pm2-nginx-production-setup) to learn more about setup pm2 with nginx using SSL/LTS.
 
-3. Use custom scripts to setup your web-app where possible.
+3. Use bastion host to connect to your EC2 Instance.
+
+   Bastion host is a server whose purpose is to provide access to a private network from an external network, such as the Internet. This is provides secure access to your EC2 instance. So, to connect to your EC2 instance that serve your web-app you need to connect bastion host first. Learn more about bastion host [here](https://aws.amazon.com/solutions/implementations/linux-bastion/).
+
+   To create bastion host, you can launch EC2 instance in public subnet. For security group, open SSH connection from your IP. Read more about [deployment guide bastion host](https://aws-quickstart.github.io/quickstart-linux-bastion/).
+
+4. Use custom scripts to setup your web-app where possible.
 
    Use custom bash/shell script to automate your deployment. This can be done using [EC2 user data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html). Simply add your custom bash/shell script to your EC2 user data before it launch. This is useful so you don't need to connect to EC2 directly.
 
-4. (optional) Put EC2 behind load balancer.
+5. (optional) Put EC2 behind load balancer.
 
    You can put EC2 instance in private subnet. Use an [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html) in front of it so that users can access the web-app without having to dirrectly access the EC2 instance.
 
