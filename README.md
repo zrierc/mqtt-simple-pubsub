@@ -461,6 +461,12 @@ Welcome to the improvement section of this mini workshop! Here you will learn ho
 
 #### Lambda function
 
+1. Grant only the permissions required to perform a task to your Lambda function role.
+
+   > **💡 TIP**
+   >
+   > For this scenario, you can simply use lambda basic permissions (`AWSLambdaBasicExecutionRole`) from AWS managed policies.
+
 #### Web-App
 
 1. Restrict your security group that attached to your EC2 instance that serve your web-app.
