@@ -437,7 +437,7 @@ You probably use the **wrong endpoint and authentication** in `.env` file. Pleas
 >
 > To follow this section you MUST complete [Setup Environment](#setup-environment) section and mare sure everything runs well.
 
-Welcome to the improvement section of this mini workshop! Here you will learn how to improve and optimize your web-app for production such as implement security best practices and add high availability to your web-app.
+Welcome to the improvement section of this mini workshop! Here you will learn how to improve and optimize your web-app for production such as implementing security best practices and adding high availability.
 
 ### Implement Security & Best Practices
 
