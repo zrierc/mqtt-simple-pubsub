@@ -454,11 +454,31 @@ Welcome to the improvement section of this mini workshop! Here you will learn ho
    >
    > There's an associated outbound rule that allows responses to incoming traffic, you can do this by adding [ephemeral ports](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html#nacl-ephemeral-ports) to outbound rule. **Only add the required port and traffic to the rule**.
 
+3. Don't make Amazon MQ publicly accessible and put them in private subnet.
+
 #### Lambda function
 
 #### Web-App
 
-#### References
+1. Restrict your security group that attached to your EC2 instance that serve your web-app.
+
+   > Restrict inbound rule by **adding only the necessary ports and traffic to the rule**.
+
+2. Use HTTPS connection for your web-app.
+
+   To encrypts communications between a client and server you need to add SSL/TLS to your web-app.
+
+   > Click [here](https://pm2.keymetrics.io/docs/tutorials/pm2-nginx-production-setup) to learn more about setup pm2 with nginx using SSL/LTS.
+
+3. Use custom scripts to setup your web-app where possible.
+
+   Use custom bash/shell script to automate your deployment. This can be done using [EC2 user data](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/user-data.html). Simply add your custom bash/shell script to your EC2 user data before it launch. This is useful so you don't need to connect to EC2 directly.
+
+4. (optional) Put EC2 behind load balancer.
+
+   You can put EC2 instance in private subnet. Use an [Application Load Balancer (ALB)](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/introduction.html) in front of it so that users can access the web-app without having to dirrectly access the EC2 instance.
+
+   You can also use HTTPS to your Application Load Balancer (ALB). [Learn more](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html).
 
 ### Add High-Availability
 
